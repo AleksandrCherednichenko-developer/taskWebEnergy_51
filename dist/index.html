@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Главная</title>
+   <link rel="stylesheet" href="css/reset.css">
+   <link rel="stylesheet" href="css/style.min.css">
+</head>
+
+<body>
+   <div class="wrapper">
+      <header class="header">
+   <div class="header__top">
+      <div class="container">
+         <a href="#" class="header__top-logo">
+            <img src="img/logo.svg" alt="logo">
+         </a>
+         <div class="header__top-location">
+            <p>Выберите ваш город:</p>
+            <button>Санкт-Петербург</button>
+         </div>
+         <div class="header__top-search">
+            <input type="text" placeholder="Поиск">
+            <button></button>
+         </div>
+         <div class="header__top-working-mode">
+            <p>Режим работы <br>
+               Пн-Пт с 8:00 — 18:00</p>
+         </div>
+         <div class="header__top-social">
+            <a href="#"><img src="img/facebook.svg" alt="facebook"></a>
+            <a href="#"><img src="img/instagram.svg" alt="instagram"></a>
+            <a href="#"><img src="img/vkontakte.svg" alt="vkontakte"></a>
+         </div>
+         <div class="header__top-contact">
+            <div class="item">
+               <p>г. Москва</p>
+               <a href="tel:+74957772345">
+                  +7 (495) 777-2345<br>
+                  <span>Заказать звонок</span>
+               </a>
+            </div>
+            <div class="item">
+               <p>г. Ногинск</p>
+               <a href="tel:+74956004400">
+                  +7 (495) 600-4400<br>
+                  <span>Заказать звонок</span>
+               </a>
+            </div>
+         </div>
+      </div>
+   </div>
+   <div class="header__menu">
+      <div class="container">
+         <button class="header__menu-catalog">
+            <img src="img/menu.svg" alt="menu">
+            <span>Каталог</span>
+         </button>
+         <nav class="header__menu-nav">
+            <a href="#">Новости</a>
+            <a href="#">О компании</a>
+            <a href="#">Скидки</a>
+            <a href="#">Доставка и оплата</a>
+            <a href="#">Услуги</a>
+            <a href="#">Дилеры</a>
+            <a href="#">Магазины</a>
+            <a href="#">Контакты</a>
+         </nav>
+         <button class="header__menu-button">Честный знак</button>
+         <div class="header__menu-user">
+            <a href="#" class="favorites">
+               <img src="img/like.svg" alt="favorites">
+               <span class="count">0</span>
+            </a>
+            <a href="#" class="basket">
+               <img src="img/basket.svg" alt="basket">
+               <span class="count">0</span>
+            </a>
+            <a href="#" class="user">
+               <img src="img/user.svg" alt="user">
+               Войти
+            </a>
+         </div>
+      </div>
+   </div>
+</header>
+
+      <main class="main">
+   <section class="title__block">
+   <div class="container">
+      <div class="map__pages">
+         <a href="#">Каталог товаров</a>
+         <a href="#">Спецодежда</a>
+         <a href="#">Спецодежда зимняя</a>
+      </div>
+      <h3>Спецодежда Зимняя</h3>
+      <div class="categories">
+         <button>Спецодежда с заключением Минпромторга</button>
+         <button>Костюмы женские</button>
+         <button>Костюмы мужские</button>
+         <button>Костюмы сварщика</button>
+         <button>Жилеты женские</button>
+         <button>Жилеты мужские</button>
+         <button>Жилеты зимние</button>
+         <button>Брюки</button>
+         <button>Куртки женские</button>
+         <button>Куртки мужские</button>
+         <button>Полукомбинезоны зимние</button>
+         <div class="categories__more hide">
+            <button>Костюмы сварщика</button>
+            <button>Жилеты женские</button>
+            <button>Жилеты мужские</button>
+         </div>
+         <button class="show__more">Показать еще</button>
+      </div>
+      <div class="sorting">
+         <div class="sorting__select">
+            <div class="header">
+               <p data-value="По умолчанию">По умолчанию</p>
+               <img src="img/select-arrow.svg" alt="arrow">
+            </div>
+            <div class="sorting__select-inner">
+               <div class="list">
+                  <p class="item" data-value="По умолчанию">По умолчанию</p>
+                  <p class="item" data-value="По популярности">По популярности</p>
+                  <p class="item" data-value="По возрастанию цены">По возрастанию цены</p>
+                  <p class="item" data-value="По убыванию цены">По убыванию цены</p>
+                  <p class="item" data-value="По новинкам">По новинкам</p>
+                  <p class="item" data-value="По скидке">По скидке</p>
+                  <p class="item" data-value="По алфавиту">По алфавиту</p>
+               </div>
+            </div>
+         </div>
+         <button class="sorting__filter-btn">
+            <img src="img/filter.svg" alt="filter">
+            <span>Фильтр</span>
+         </button>
+      </div>
+   </div>
+</section>
+
+   <section class="content">
+   <div class="container">
+      <div class="fiter">
+
+      </div>
+      <div class="products-block">
+
+      </div>
+   </div>
+</section>
+</main>
+
+      <footer class="footer">
+   <div class="container">
+      <div class="footer__info">
+         <div class="footer__info-column">
+            <a href="tel:+74957772345" class="phone__link">
+               <span>+7 (495) 777-2345</span><br>
+               <span>Заказать звонок</span>
+            </a>
+            <a href="mailto:info@planeta-sirius.ru" class="email__link">info@planeta-sirius.ru</a>
+            <div class="social">
+               <a href="#">
+                  <img src="img/facebook.svg" alt="facebook">
+               </a>
+               <a href="#">
+                  <img src="img/instagram.svg" alt="instagram">
+               </a>
+               <a href="#">
+                  <img src="img/vkontakte.svg" alt="vkontakte">
+               </a>
+            </div>
+            <button class="price">
+               <img src="img/exel.svg" alt="price">
+               <span>Скачать прайс-лист</span>
+            </button>
+         </div>
+         <div class="footer__info-column">
+            <ul>
+               <li><a href="#">каталог</a></li>
+               <li><a href="#">СПЕЦОДЕЖДА</a></li>
+               <li><a href="#">Средства защиты рук</a></li>
+               <li><a href="#">Активный отдых</a></li>
+               <li><a href="#">Хозтовары и постельные принадлежности</a></li>
+               <li><a href="#">Ликвидация</a></li>
+            </ul>
+         </div>
+         <div class="footer__info-column">
+            <ul>
+               <li><a href="#">обувь</a></li>
+               <li><a href="#">Средства индивидуальной защиты</a></li>
+               <li><a href="#">жилеты на все случаи жизни</a></li>
+               <li><a href="#">линия Plus</a></li>
+            </ul>
+         </div>
+         <div class="footer__info-column">
+            <p class="text">Подпишитесь на новости и акции и будьте в курсе всего!</p>
+            <div class="input">
+               <input type="text" placeholder="Введите свой e-mail">
+               <button></button>
+            </div>
+            <label>
+               <input type="checkbox">
+               <span></span>
+               <p>Я даю согласие на обработку персональных данных и соглашаюсь с правилами обработки персональных
+                  данных.</p>
+            </label>
+         </div>
+      </div>
+      <div class="footer__copyright">
+         <p>2021 © PLANETA-SIRIUS.RU</p>
+         <p>Вся приведенная на сайте информация, носят исключительно ознакомительный характер и не является публичной
+            офертой.</p>
+      </div>
+   </div>
+</footer>
+   </div>
+
+   <script src="js/app.min.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,41 @@
+@import "reset";
+@import "fonts";
+
+*,
+*::before,
+*::after {
+   box-sizing: border-box;
+}
+
+html,
+body {
+   height: 100%;
+}
+
+body {
+   font: 400 14px/100% Roboto;
+}
+
+.wrapper {
+   min-height: 100%;
+   display: flex;
+   flex-direction: column;
+}
+
+.main {
+   flex: 1 1 auto;
+}
+
+.container {
+   max-width: 1280px;
+   margin: 0 auto;
+   padding: 0 10px;
+}
+.hide {
+   display: none;
+}
+
+@import "_header";
+@import "_title-block";
+@import "_content";
+@import "_footer";
