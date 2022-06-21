@@ -1,5 +1,6 @@
 .title__block {
-   padding: 39px 0 20px;
+   // padding: 39px 0 20px;
+   padding-bottom: 20px;
    .map__pages {
       display: flex;
       align-items: center;
@@ -44,6 +45,10 @@
          -ms-transition: 0.2s all;
          -o-transition: 0.2s all;
          &:hover {
+            color: #ffffff;
+            background: #e93c3c;
+         }
+         &.active {
             color: #ffffff;
             background: #e93c3c;
          }
