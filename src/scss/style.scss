@@ -16,6 +16,10 @@ body {
    font: 400 14px/100% Roboto;
 }
 
+.lock {
+   overflow: hidden;
+}
+
 .wrapper {
    min-height: 100%;
    display: flex;
@@ -32,15 +36,41 @@ body {
    margin: 0 auto;
    padding: 0 10px;
 }
+
 .hide {
    display: none;
 }
+
 .dont-click {
    opacity: 0.7;
    pointer-events: none;
+}
+
+.background {
+   position: fixed;
+   z-index: 15;
+   top: 0px;
+   bottom: 0px;
+   left: 0px;
+   right: 0px;
+   background-color: rgba(0, 0, 0, 0.5);
+   opacity: 0;
+   overflow: hidden;
+   visibility: hidden;
+   transition: 0.5s all;
+   -webkit-transition: 0.5s all;
+   -moz-transition: 0.5s all;
+   -ms-transition: 0.5s all;
+   -o-transition: 0.5s all;
+   &.fixed {
+      opacity: 1;
+      overflow: visible;
+      visibility: visible;
+   }
 }
 
 @import "_header";
 @import "_title-block";
 @import "_content";
 @import "_footer";
+@import "_media";

@@ -5,7 +5,7 @@
    padding: 50px 0 38px;
    &__info {
       display: grid;
-      grid-template-columns: repeat(4, 1fr);
+      grid-template-columns: 1fr 2fr 1fr;
       gap: 30px;
       padding-bottom: 50px;
       &-column {
@@ -43,14 +43,16 @@
                padding: 0;
             }
          }
-         &:nth-child(2),
-         &:nth-child(3) {
+         &:nth-child(2) {
             font: 500 16px/20px Roboto;
             text-transform: uppercase;
             ul {
                display: flex;
                flex-direction: column;
                gap: 20px;
+               flex-wrap: wrap;
+               max-height: 270px;
+               max-width: 50%;
             }
             a {
                transition: 0.2s color;
@@ -63,7 +65,7 @@
                }
             }
          }
-         &:nth-child(4) {
+         &:nth-child(3) {
             .text {
                font-weight: 500;
                color: #52575c;

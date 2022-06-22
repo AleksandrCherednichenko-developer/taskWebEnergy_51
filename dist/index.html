@@ -5,49 +5,63 @@
    <meta http-equiv="X-UA-Compatible" content="IE=edge">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <title>Главная</title>
+
+   <!-- полоса для ввода диапозона зароботка -->
+   <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+      integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+   <link rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/ion-rangeslider/2.3.1/css/ion.rangeSlider.min.css" />
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/ion-rangeslider/2.3.1/js/ion.rangeSlider.min.js"></script>
+
+
    <link rel="stylesheet" href="css/reset.css">
    <link rel="stylesheet" href="css/style.min.css">
 </head>
 
 <body>
+
    <div class="wrapper">
       <header class="header">
    <div class="header__top">
       <div class="container">
-         <a href="#" class="header__top-logo">
-            <img src="img/logo.svg" alt="logo">
-         </a>
-         <div class="header__top-location">
-            <p>Выберите ваш город:</p>
-            <button>Санкт-Петербург</button>
-         </div>
-         <div class="header__top-search">
-            <input type="text" placeholder="Поиск">
-            <button></button>
-         </div>
-         <div class="header__top-working-mode">
-            <p>Режим работы <br>
-               Пн-Пт с 8:00 — 18:00</p>
-         </div>
-         <div class="header__top-social">
-            <a href="#"><img src="img/facebook.svg" alt="facebook"></a>
-            <a href="#"><img src="img/instagram.svg" alt="instagram"></a>
-            <a href="#"><img src="img/vkontakte.svg" alt="vkontakte"></a>
-         </div>
-         <div class="header__top-contact">
-            <div class="item">
-               <p>г. Москва</p>
-               <a href="tel:+74957772345">
-                  +7 (495) 777-2345<br>
-                  <span>Заказать звонок</span>
-               </a>
+         <div class="inner">
+            <a href="#" class="header__top-logo">
+               <img src="img/logo.svg" alt="logo">
+            </a>
+            <div class="header__top-location">
+               <p>Выберите ваш город:</p>
+               <button>Санкт-Петербург</button>
             </div>
-            <div class="item">
-               <p>г. Ногинск</p>
-               <a href="tel:+74956004400">
-                  +7 (495) 600-4400<br>
-                  <span>Заказать звонок</span>
-               </a>
+            <div class="header__top-search">
+               <input type="text" placeholder="Поиск">
+               <button></button>
+            </div>
+         </div>
+         <div class="inner">
+            <div class="header__top-working-mode">
+               <p>Режим работы <br>
+                  Пн-Пт с 8:00 — 18:00</p>
+            </div>
+            <div class="header__top-social">
+               <a href="#"><img src="img/facebook.svg" alt="facebook"></a>
+               <a href="#"><img src="img/instagram.svg" alt="instagram"></a>
+               <a href="#"><img src="img/vkontakte.svg" alt="vkontakte"></a>
+            </div>
+            <div class="header__top-contact">
+               <div class="item">
+                  <p>г. Москва</p>
+                  <a href="tel:+74957772345">
+                     +7 (495) 777-2345<br>
+                     <span>Заказать звонок</span>
+                  </a>
+               </div>
+               <div class="item">
+                  <p>г. Ногинск</p>
+                  <a href="tel:+74956004400">
+                     +7 (495) 600-4400<br>
+                     <span>Заказать звонок</span>
+                  </a>
+               </div>
             </div>
          </div>
       </div>
@@ -80,7 +94,7 @@
             </a>
             <a href="#" class="user">
                <img src="img/user.svg" alt="user">
-               Войти
+               <span>Войти</span>
             </a>
          </div>
       </div>
@@ -90,6 +104,7 @@
       <main class="main">
    <section class="title__block">
    <div class="container">
+      <a href="#" class="back__page-btn">Назад</a>
       <div class="map__pages">
          <a href="#">Каталог товаров</a>
          <a href="#">Спецодежда</a>
@@ -143,288 +158,296 @@
 
    <section class="content">
    <div class="container">
-      <div class="filter">
-         <div class="filter__block price first-block">
-            <div class="filter__block-header">
-               <span>Цена, руб</span>
-               <img src="img/select-arrow.svg" alt="arrow">
+      <div class="filter__inner">
+         <div class="filter">
+            <div class="filter__block price ">
+               <div class="filter__block-header">
+                  <span>Цена, руб</span>
+                  <img src="img/select-arrow.svg" alt="arrow">
+               </div>
+               <div class="filter__block-list">
+                  <div class="price__input">
+                     <div class="price__input-from">
+                        <input type="text" maxlength="6">
+                     </div>
+                     <div class="price__input-to">
+                        <input type="text" maxlength="6">
+                     </div>
+                  </div>
+                  <input class="js-range-slider" type="text" value="" />
+               </div>
             </div>
-            <div class="filter__block-list">
-               <p>1</p>
-               <p>2</p>
-               <p>3</p>
+            <div class="filter__block product__type">
+               <div class="filter__block-header">
+                  <span>Вид изделия</span>
+                  <img src="img/select-arrow.svg" alt="arrow">
+               </div>
+               <div class="filter__block-list">
+                  <label>
+                     <input type="checkbox">
+                     <span></span>
+                     <p>Брюки</p>
+                  </label>
+                  <label class="dont-click">
+                     <input type="checkbox">
+                     <span></span>
+                     <p>Жилет</p>
+                  </label>
+                  <label>
+                     <input type="checkbox">
+                     <span></span>
+                     <p>Костюм</p>
+                  </label>
+                  <label>
+                     <input type="checkbox">
+                     <span></span>
+                     <p>Куртка</p>
+                  </label>
+                  <label>
+                     <input type="checkbox">
+                     <span></span>
+                     <p>Полукомбинезон</p>
+                  </label>
+               </div>
             </div>
+            <div class="filter__block season">
+               <div class="filter__block-header">
+                  <span>Сезон</span>
+                  <img src="img/select-arrow.svg" alt="arrow">
+               </div>
+               <div class="filter__block-list">
+                  <label>
+                     <input type="checkbox">
+                     <span></span>
+                     <p>Зима</p>
+                  </label>
+               </div>
+            </div>
+            <div class="filter__block trademark">
+               <div class="filter__block-header">
+                  <span>Торговая марка / Бренд</span>
+                  <img src="img/select-arrow.svg" alt="arrow">
+               </div>
+               <div class="filter__block-list">
+                  <label>
+                     <input type="checkbox">
+                     <span></span>
+                     <p>СИРИУС</p>
+                  </label>
+               </div>
+            </div>
+            <div class="filter__block gender">
+               <div class="filter__block-header">
+                  <span>Пол</span>
+                  <img src="img/select-arrow.svg" alt="arrow">
+               </div>
+               <div class="filter__block-list">
+                  <label>
+                     <input type="checkbox">
+                     <span></span>
+                     <p>Женский</p>
+                  </label>
+                  <label>
+                     <input type="checkbox">
+                     <span></span>
+                     <p>Мужской</p>
+                  </label>
+                  <label>
+                     <input type="checkbox">
+                     <span></span>
+                     <p>Универсальный</p>
+                  </label>
+               </div>
+            </div>
+            <div class="filter__block compound">
+               <div class="filter__block-header">
+                  <span>Состав</span>
+                  <img src="img/select-arrow.svg" alt="arrow">
+               </div>
+               <div class="filter__block-list">
+                  <label>
+                     <input type="checkbox">
+                     <span></span>
+                     <p>Брюки</p>
+                  </label>
+                  <label>
+                     <input type="checkbox">
+                     <span></span>
+                     <p>Жилет</p>
+                  </label>
+                  <label>
+                     <input type="checkbox">
+                     <span></span>
+                     <p>Костюм</p>
+                  </label>
+                  <label>
+                     <input type="checkbox">
+                     <span></span>
+                     <p>Куртка</p>
+                  </label>
+                  <label>
+                     <input type="checkbox">
+                     <span></span>
+                     <p>Полукомбинезон</p>
+                  </label>
+                  <label>
+                     <input type="checkbox">
+                     <span></span>
+                     <p>Полукомбинезон</p>
+                  </label>
+               </div>
+            </div>
+            <div class="filter__block upper__material">
+               <div class="filter__block-header">
+                  <span>Ткань/Материал верха</span>
+                  <img src="img/select-arrow.svg" alt="arrow">
+               </div>
+               <div class="filter__block-list">
+                  <label>
+                     <input type="checkbox">
+                     <span></span>
+                     <p>Брюки</p>
+                  </label>
+                  <label>
+                     <input type="checkbox">
+                     <span></span>
+                     <p>Жилет</p>
+                  </label>
+                  <label>
+                     <input type="checkbox">
+                     <span></span>
+                     <p>Костюм</p>
+                  </label>
+                  <label>
+                     <input type="checkbox">
+                     <span></span>
+                     <p>Куртка</p>
+                  </label>
+                  <label>
+                     <input type="checkbox">
+                     <span></span>
+                     <p>Полукомбинезон</p>
+                  </label>
+               </div>
+            </div>
+            <div class="filter__block insulation">
+               <div class="filter__block-header">
+                  <span>Утеплитель</span>
+                  <img src="img/select-arrow.svg" alt="arrow">
+               </div>
+               <div class="filter__block-list">
+                  <label>
+                     <input type="checkbox">
+                     <span></span>
+                     <p>Брюки</p>
+                  </label>
+                  <label>
+                     <input type="checkbox">
+                     <span></span>
+                     <p>Жилет</p>
+                  </label>
+                  <label>
+                     <input type="checkbox">
+                     <span></span>
+                     <p>Костюм</p>
+                  </label>
+                  <label>
+                     <input type="checkbox">
+                     <span></span>
+                     <p>Куртка</p>
+                  </label>
+                  <label>
+                     <input type="checkbox">
+                     <span></span>
+                     <p>Полукомбинезон</p>
+                  </label>
+               </div>
+            </div>
+            <div class="filter__block purpose">
+               <div class="filter__block-header">
+                  <span>Назначение</span>
+                  <img src="img/select-arrow.svg" alt="arrow">
+               </div>
+               <div class="filter__block-list">
+                  <label>
+                     <input type="checkbox">
+                     <span></span>
+                     <p>Брюки</p>
+                  </label>
+                  <label>
+                     <input type="checkbox">
+                     <span></span>
+                     <p>Жилет</p>
+                  </label>
+                  <label>
+                     <input type="checkbox">
+                     <span></span>
+                     <p>Костюм</p>
+                  </label>
+               </div>
+            </div>
+            <div class="filter__block color">
+               <div class="filter__block-header">
+                  <span>Цвет</span>
+                  <img src="img/select-arrow.svg" alt="arrow">
+               </div>
+               <div class="filter__block-list">
+                  <label>
+                     <input type="checkbox">
+                     <span></span>
+                     <p>Бирюзовый</p>
+                  </label>
+                  <label>
+                     <input type="checkbox">
+                     <span></span>
+                     <p>Васильковый</p>
+                  </label>
+                  <label>
+                     <input type="checkbox">
+                     <span></span>
+                     <p>Красный</p>
+                  </label>
+                  <label>
+                     <input type="checkbox">
+                     <span></span>
+                     <p>Лимнонный</p>
+                  </label>
+                  <label>
+                     <input type="checkbox">
+                     <span></span>
+                     <p>Олива</p>
+                  </label>
+                  <label>
+                     <input type="checkbox">
+                     <span></span>
+                     <p>Оранжевый</p>
+                  </label>
+                  <label>
+                     <input type="checkbox">
+                     <span></span>
+                     <p>Серый</p>
+                  </label>
+                  <label>
+                     <input type="checkbox">
+                     <span></span>
+                     <p>Синий</p>
+                  </label>
+                  <label>
+                     <input type="checkbox">
+                     <span></span>
+                     <p>Черный, красный</p>
+                  </label>
+                  <label>
+                     <input type="checkbox">
+                     <span></span>
+                     <p>Черный</p>
+                  </label>
+               </div>
+            </div>
+            <button class="show-btn">Показать (123)</button>
+            <button class="clear-btn">Сбросить</button>
          </div>
-         <div class="filter__block product__type">
-            <div class="filter__block-header">
-               <span>Вид изделия</span>
-               <img src="img/select-arrow.svg" alt="arrow">
-            </div>
-            <div class="filter__block-list">
-               <label>
-                  <input type="checkbox">
-                  <span></span>
-                  <p>Брюки</p>
-               </label>
-               <label class="dont-click">
-                  <input type="checkbox">
-                  <span></span>
-                  <p>Жилет</p>
-               </label>
-               <label>
-                  <input type="checkbox">
-                  <span></span>
-                  <p>Костюм</p>
-               </label>
-               <label>
-                  <input type="checkbox">
-                  <span></span>
-                  <p>Куртка</p>
-               </label>
-               <label>
-                  <input type="checkbox">
-                  <span></span>
-                  <p>Полукомбинезон</p>
-               </label>
-            </div>
-         </div>
-         <div class="filter__block season">
-            <div class="filter__block-header">
-               <span>Сезон</span>
-               <img src="img/select-arrow.svg" alt="arrow">
-            </div>
-            <div class="filter__block-list">
-               <label>
-                  <input type="checkbox">
-                  <span></span>
-                  <p>Зима</p>
-               </label>
-            </div>
-         </div>
-         <div class="filter__block trademark">
-            <div class="filter__block-header">
-               <span>Торговая марка / Бренд</span>
-               <img src="img/select-arrow.svg" alt="arrow">
-            </div>
-            <div class="filter__block-list">
-               <label>
-                  <input type="checkbox">
-                  <span></span>
-                  <p>СИРИУС</p>
-               </label>
-            </div>
-         </div>
-         <div class="filter__block gender">
-            <div class="filter__block-header">
-               <span>Пол</span>
-               <img src="img/select-arrow.svg" alt="arrow">
-            </div>
-            <div class="filter__block-list">
-               <label>
-                  <input type="checkbox">
-                  <span></span>
-                  <p>Женский</p>
-               </label>
-               <label>
-                  <input type="checkbox">
-                  <span></span>
-                  <p>Мужской</p>
-               </label>
-               <label>
-                  <input type="checkbox">
-                  <span></span>
-                  <p>Универсальный</p>
-               </label>
-            </div>
-         </div>
-         <div class="filter__block compound">
-            <div class="filter__block-header">
-               <span>Состав</span>
-               <img src="img/select-arrow.svg" alt="arrow">
-            </div>
-            <div class="filter__block-list">
-               <label>
-                  <input type="checkbox">
-                  <span></span>
-                  <p>Брюки</p>
-               </label>
-               <label>
-                  <input type="checkbox">
-                  <span></span>
-                  <p>Жилет</p>
-               </label>
-               <label>
-                  <input type="checkbox">
-                  <span></span>
-                  <p>Костюм</p>
-               </label>
-               <label>
-                  <input type="checkbox">
-                  <span></span>
-                  <p>Куртка</p>
-               </label>
-               <label>
-                  <input type="checkbox">
-                  <span></span>
-                  <p>Полукомбинезон</p>
-               </label>
-               <label>
-                  <input type="checkbox">
-                  <span></span>
-                  <p>Полукомбинезон</p>
-               </label>
-            </div>
-         </div>
-         <div class="filter__block upper__material">
-            <div class="filter__block-header">
-               <span>Ткань/Материал верха</span>
-               <img src="img/select-arrow.svg" alt="arrow">
-            </div>
-            <div class="filter__block-list">
-               <label>
-                  <input type="checkbox">
-                  <span></span>
-                  <p>Брюки</p>
-               </label>
-               <label>
-                  <input type="checkbox">
-                  <span></span>
-                  <p>Жилет</p>
-               </label>
-               <label>
-                  <input type="checkbox">
-                  <span></span>
-                  <p>Костюм</p>
-               </label>
-               <label>
-                  <input type="checkbox">
-                  <span></span>
-                  <p>Куртка</p>
-               </label>
-               <label>
-                  <input type="checkbox">
-                  <span></span>
-                  <p>Полукомбинезон</p>
-               </label>
-            </div>
-         </div>
-         <div class="filter__block insulation">
-            <div class="filter__block-header">
-               <span>Утеплитель</span>
-               <img src="img/select-arrow.svg" alt="arrow">
-            </div>
-            <div class="filter__block-list">
-               <label>
-                  <input type="checkbox">
-                  <span></span>
-                  <p>Брюки</p>
-               </label>
-               <label>
-                  <input type="checkbox">
-                  <span></span>
-                  <p>Жилет</p>
-               </label>
-               <label>
-                  <input type="checkbox">
-                  <span></span>
-                  <p>Костюм</p>
-               </label>
-               <label>
-                  <input type="checkbox">
-                  <span></span>
-                  <p>Куртка</p>
-               </label>
-               <label>
-                  <input type="checkbox">
-                  <span></span>
-                  <p>Полукомбинезон</p>
-               </label>
-            </div>
-         </div>
-         <div class="filter__block purpose">
-            <div class="filter__block-header">
-               <span>Назначение</span>
-               <img src="img/select-arrow.svg" alt="arrow">
-            </div>
-            <div class="filter__block-list">
-               <label>
-                  <input type="checkbox">
-                  <span></span>
-                  <p>Брюки</p>
-               </label>
-               <label>
-                  <input type="checkbox">
-                  <span></span>
-                  <p>Жилет</p>
-               </label>
-               <label>
-                  <input type="checkbox">
-                  <span></span>
-                  <p>Костюм</p>
-               </label>
-            </div>
-         </div>
-         <div class="filter__block color last-block">
-            <div class="filter__block-header">
-               <span>Цвет</span>
-               <img src="img/select-arrow.svg" alt="arrow">
-            </div>
-            <div class="filter__block-list">
-               <label>
-                  <input type="checkbox">
-                  <span></span>
-                  <p>Бирюзовый</p>
-               </label>
-               <label>
-                  <input type="checkbox">
-                  <span></span>
-                  <p>Васильковый</p>
-               </label>
-               <label>
-                  <input type="checkbox">
-                  <span></span>
-                  <p>Красный</p>
-               </label>
-               <label>
-                  <input type="checkbox">
-                  <span></span>
-                  <p>Лимнонный</p>
-               </label>
-               <label>
-                  <input type="checkbox">
-                  <span></span>
-                  <p>Олива</p>
-               </label>
-               <label>
-                  <input type="checkbox">
-                  <span></span>
-                  <p>Оранжевый</p>
-               </label>
-               <label>
-                  <input type="checkbox">
-                  <span></span>
-                  <p>Серый</p>
-               </label>
-               <label>
-                  <input type="checkbox">
-                  <span></span>
-                  <p>Синий</p>
-               </label>
-               <label>
-                  <input type="checkbox">
-                  <span></span>
-                  <p>Черный, красный</p>
-               </label>
-               <label>
-                  <input type="checkbox">
-                  <span></span>
-                  <p>Черный</p>
-               </label>
-            </div>
-         </div>
-
-         <button class="show-btn">Показать (123)</button>
-         <button class="clear-btn">Сбросить</button>
+         <button class="filter__close-btn"></button>
       </div>
       <div class="products-block">
          <div class="items">
@@ -498,6 +521,17 @@
             </a>
          </div>
          <button class="show__more-card">Показать еще</button>
+         <div class="navigation">
+            <button class="arrow-prew"></button>
+            <ul class="navigation__pages">
+               <li>1</li>
+               <li>2</li>
+               <li>3</li>
+               <li class="dont-click">4</li>
+               <li class="all__pages">Все</li>
+            </ul>
+            <button class="arrow-next"></button>
+         </div>
       </div>
    </div>
 </section>
@@ -536,10 +570,6 @@
                <li><a href="#">Активный отдых</a></li>
                <li><a href="#">Хозтовары и постельные принадлежности</a></li>
                <li><a href="#">Ликвидация</a></li>
-            </ul>
-         </div>
-         <div class="footer__info-column">
-            <ul>
                <li><a href="#">обувь</a></li>
                <li><a href="#">Средства индивидуальной защиты</a></li>
                <li><a href="#">жилеты на все случаи жизни</a></li>
@@ -568,6 +598,8 @@
    </div>
 </footer>
    </div>
+
+   <div class="background"></div>
 
    <script src="js/app.min.js"></script>
 </body>
