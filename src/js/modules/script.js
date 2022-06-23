@@ -6,12 +6,15 @@ document.addEventListener("DOMContentLoaded", () => {
    let categoriesShowMoreBlock = document.querySelector('.categories .categories__more')
    let categoriesShowMoreBtn = document.querySelector('.categories .show__more')
 
-   let filter = document.querySelector('.filter__inner')
+   let filter = document.querySelector('.filter__inner'),
+      filterPanel = filter.querySelector('.filter'),
+      priceFrom = filter.querySelector('.price__input-from input'),
+      priceTo = filter.querySelector('.price__input-to input'),
+      filterCloseBtn = filter.querySelector('.filter__close-btn');
 
-   let priceFrom = filter.querySelector('.price__input-from input'),
-      priceTo = filter.querySelector('.price__input-to input');
+   let popup = document.querySelector('.popup'),
+      popupCloseBtn = document.querySelector('.close__popup');
 
-   let filterCloseBtn = filter.querySelector('.filter__close-btn')
 
    // создание полосы для выбора диапозона
    function priceSlider() {
@@ -114,14 +117,7 @@ document.addEventListener("DOMContentLoaded", () => {
          background.classList.add('fixed')
          filter.classList.add('fixed')
       }
-
-      // закрытие фильтров на мобилке
-      if (target === filterCloseBtn) {
-         body.classList.remove('lock')
-         background.classList.remove('fixed')
-         filter.classList.remove('fixed')
-      }
-
+      // нажатия в блоке с заголовком
       if (target.closest('.title__block')) {
          // нажатие на предложенные категории
          if (target.tagName === 'BUTTON' && target.closest('.categories') && target !== categoriesShowMoreBtn) {
@@ -139,18 +135,38 @@ document.addEventListener("DOMContentLoaded", () => {
             }
          }
       }
-
-      if (target.closest('.filter')) {
+      // нажатия в панели фильтров
+      if (target.closest('.filter__inner')) {
          // открытие и закрытие фильтров
          if (target.closest('.filter__block-header')) {
             target.closest('.filter__block').classList.toggle('active')
          }
+         // закрытие фильтров на мобилке
+         if (target === filterCloseBtn) {
+            body.classList.remove('lock')
+            background.classList.remove('fixed')
+            filter.classList.remove('fixed')
+         }
       }
-
+      // нажатия на карточки товаров
       if (target.closest('.products-block')) {
+         // нажатие на кнопки
          if (target.tagName === 'BUTTON' && target.closest('.item')) {
             event.preventDefault()
+            // открытие попапа
+            if (target.closest('.add__basket') && !popup.classList.contains('fixed')) {
+               background.classList.add('fixed')
+               popup.classList.add('fixed')
+               body.classList.add('lock')
+            }
          }
+      }
+
+      // закрытие попапа
+      if (target === popupCloseBtn && popup.classList.contains('fixed')) {
+         body.classList.remove('lock')
+         background.classList.remove('fixed')
+         popup.classList.remove('fixed')
       }
    })
 })

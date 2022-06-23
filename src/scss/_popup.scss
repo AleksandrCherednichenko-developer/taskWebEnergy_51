@@ -1,0 +1,203 @@
+.popup {
+   position: fixed;
+   top: 0px;
+   left: 0px;
+   right: 0px;
+   bottom: 0px;
+   z-index: 20;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   transition: 0.5s all;
+   -webkit-transition: 0.5s all;
+   -moz-transition: 0.5s all;
+   -ms-transition: 0.5s all;
+   -o-transition: 0.5s all;
+
+   opacity: 0;
+   visibility: hidden;
+   overflow: hidden;
+   &.fixed {
+      opacity: 1;
+      visibility: visible;
+      overflow: visible;
+   }
+
+   .option__add-popup {
+      position: relative;
+      max-width: 500px;
+      width: 100%;
+      background-color: #ffffff;
+      padding: 40px 20px;
+      h5 {
+         font: 500 20px/26px Roboto;
+         margin-left: 10px;
+         margin-bottom: 33px;
+      }
+      .title {
+         display: flex;
+         align-items: center;
+         justify-content: space-between;
+         font: 500 14px/18px Roboto;
+         margin-bottom: 10px;
+      }
+      .items {
+         margin-bottom: 30px;
+         .item {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 23px;
+            padding: 8px 10px;
+            p {
+               color: #52575c;
+            }
+            .count__block {
+               display: flex;
+               align-items: center;
+               gap: 5px;
+               input {
+                  font: 400 16px/20px Roboto;
+                  text-align: center;
+                  max-width: 52px;
+                  height: 34px;
+                  color: #52575c;
+                  background: #ffffff;
+                  border: 1px solid #e8e8e8;
+                  border-radius: 4px;
+                  -webkit-border-radius: 4px;
+                  -moz-border-radius: 4px;
+                  -ms-border-radius: 4px;
+                  -o-border-radius: 4px;
+               }
+               .decrease,
+               .increase {
+                  position: relative;
+                  width: 34px;
+                  height: 34px;
+                  background: #e93c3c;
+                  border: none;
+                  border-radius: 4px;
+                  -webkit-border-radius: 4px;
+                  -moz-border-radius: 4px;
+                  -ms-border-radius: 4px;
+                  -o-border-radius: 4px;
+               }
+               .decrease {
+                  &::before {
+                     content: "";
+                     position: absolute;
+                     top: 50%;
+                     left: 50%;
+                     transform: translate(-50%, -50%);
+                     -webkit-transform: translate(-50%, -50%);
+                     -moz-transform: translate(-50%, -50%);
+                     -ms-transform: translate(-50%, -50%);
+                     -o-transform: translate(-50%, -50%);
+                     width: 50%;
+                     height: 2px;
+                     background-color: #ffffff;
+                     border-radius: 2px;
+                     -webkit-border-radius: 2px;
+                     -moz-border-radius: 2px;
+                     -ms-border-radius: 2px;
+                     -o-border-radius: 2px;
+                  }
+               }
+               .increase {
+                  &::before,
+                  &::after {
+                     content: "";
+                     position: absolute;
+                     top: 50%;
+                     left: 50%;
+                     transform: translate(-50%, -50%);
+                     -webkit-transform: translate(-50%, -50%);
+                     -moz-transform: translate(-50%, -50%);
+                     -ms-transform: translate(-50%, -50%);
+                     -o-transform: translate(-50%, -50%);
+                     background-color: #ffffff;
+                     border-radius: 2px;
+                     -webkit-border-radius: 2px;
+                     -moz-border-radius: 2px;
+                     -ms-border-radius: 2px;
+                     -o-border-radius: 2px;
+                  }
+                  &::before {
+                     height: 50%;
+                     width: 2px;
+                  }
+                  &::after {
+                     width: 50%;
+                     height: 2px;
+                  }
+               }
+            }
+            &:first-child {
+               border-top: 1px solid #e8e8e8;
+            }
+            &:last-child {
+               border-bottom: 1px solid #e8e8e8;
+            }
+            &:nth-child(2n) {
+               background-color: #f9f9fa;
+            }
+            & + .item {
+               border-top: 1px solid #e8e8e8;
+            }
+         }
+      }
+      .add__basket {
+         display: block;
+         max-width: 300px;
+         width: 100%;
+         height: 40px;
+         color: #e93c3c;
+         background-color: transparent;
+         border: 2px solid #e93c3c;
+         border-radius: 2px;
+         -webkit-border-radius: 2px;
+         -moz-border-radius: 2px;
+         -ms-border-radius: 2px;
+         -o-border-radius: 2px;
+         margin: 0 auto;
+      }
+      .close__popup {
+         position: absolute;
+         top: 30px;
+         right: 20px;
+         width: 40px;
+         height: 40px;
+         background-color: transparent;
+         border: none;
+         &::before,
+         &::after {
+            content: "";
+            position: absolute;
+            top: 0%;
+            width: 2px;
+            height: 70%;
+            background-color: #cacccf;
+            border-radius: 2px;
+            -webkit-border-radius: 2px;
+            -moz-border-radius: 2px;
+            -ms-border-radius: 2px;
+            -o-border-radius: 2px;
+         }
+         &::before {
+            transform: rotate(45deg);
+            -webkit-transform: rotate(45deg);
+            -moz-transform: rotate(45deg);
+            -ms-transform: rotate(45deg);
+            -o-transform: rotate(45deg);
+         }
+         &::after {
+            transform: rotate(-45deg);
+            -webkit-transform: rotate(-45deg);
+            -moz-transform: rotate(-45deg);
+            -ms-transform: rotate(-45deg);
+            -o-transform: rotate(-45deg);
+         }
+      }
+   }
+}
